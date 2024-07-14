@@ -7,5 +7,6 @@
 # Recycle bin
 \#recycle
 data/
+.env
 
 # End of https://www.toptal.com/developers/gitignore/api/synology
