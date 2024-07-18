@@ -1,6 +1,3 @@
-# Created by https://www.toptal.com/developers/gitignore/api/synology
-# Edit at https://www.toptal.com/developers/gitignore?templates=synology
-
 ### Synology ###
 # Thumbnails
 @eaDir
@@ -9,5 +6,3 @@
 # Custom
 data/
 .env
-
-# End of https://www.toptal.com/developers/gitignore/api/synology
