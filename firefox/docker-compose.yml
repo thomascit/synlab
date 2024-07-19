@@ -1,0 +1,15 @@
+services:
+  firefox:
+    image: lscr.io/linuxserver/firefox:latest
+    container_name: firefox
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${APPDATA}/firefox:/config
+    ports:
+      - ${PORT1}:3000
+      - ${PORT2}:3001
+    shm_size: "1gb"
+    restart: unless-stopped

@@ -1,0 +1,12 @@
+services:
+  metube:
+    image: ghcr.io/alexta69/metube
+    container_name: metube
+    environment:
+      - UID=${PUID}
+      - GID=${PGID}
+    restart: unless-stopped
+    ports:
+      - ${PORT}:8081
+    volumes:
+      - ${DOWNLOADS}:/downloads

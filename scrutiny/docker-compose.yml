@@ -6,12 +6,12 @@ services:
       - SYS_RAWIO
       - SYS_ADMIN
     ports:
-      - "6090:8080" # webapp
-      - "8086:8086" # influxDB admin
+      - ${PORT1}:8080 # webapp
+      - ${PORT2}:8086 # influxDB admin
     volumes:
       - /run/udev:/run/udev:ro
-      - ${DATA}/scrutiny:/opt/scrutiny/config
-      - ${DATA}/scrutiny/influxdb:/opt/scrutiny/influxdb
+      - ${APPDATA}/scrutiny:/opt/scrutiny/config
+      - ${APPDATA}/scrutiny/influxdb:/opt/scrutiny/influxdb
     devices:
       - /dev/sda:/dev/sda
       - /dev/sdb:/dev/sdb

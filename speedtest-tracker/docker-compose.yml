@@ -5,7 +5,7 @@ services:
         ports:
             - ${PORT}:80
         volumes:
-            - ${DATA}/speedtest-tracker:/config
+            - ${APPDATA}/speedtest-tracker:/config
         environment:
             - TZ=${TZ}
             - PGID=${PGID}
