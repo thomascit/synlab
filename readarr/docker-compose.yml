@@ -1,0 +1,16 @@
+services:
+  readarr:
+    container_name: readarr
+    image: ghcr.io/hotio/readarr:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/readarr:/config
+      - ${DATA}:/data
+    ports:
+      - ${PORT}:8787
+    network_mode: bridge
+    restart: unless-stopped

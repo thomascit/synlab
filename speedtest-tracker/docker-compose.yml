@@ -1,20 +1,20 @@
 services:
-    speedtest:
-        container_name: speedtest-tracker
-        image: henrywhitaker3/speedtest-tracker
-        ports:
-            - ${PORT}:80
-        volumes:
-            - ${APPDATA}/speedtest-tracker:/config
-        environment:
-            - TZ=${TZ}
-            - PGID=${PGID}
-            - PUID=${PUID}
-            - OOKLA_EULA_GDPR=true
-        logging:
-            driver: "json-file"
-            options:
-                max-file: "10"
-                max-size: "200k"
-        network_mode: bridge
-        restart: unless-stopped
+  speedtest:
+    container_name: speedtest-tracker
+    image: henrywhitaker3/speedtest-tracker
+    environment:
+      - TZ=${TZ}
+      - PGID=${PGID}
+      - PUID=${PUID}
+      - OOKLA_EULA_GDPR=true
+    volumes:
+      - ${APPDATA}/speedtest-tracker:/config
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "10"
+        max-size: "200k"
+    ports:
+      - ${PORT}:80
+    network_mode: bridge
+    restart: unless-stopped

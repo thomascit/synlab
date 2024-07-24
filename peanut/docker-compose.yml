@@ -1,14 +1,16 @@
 services:
   peanut:
-    image: brandawg93/peanut:latest
     container_name: peanut
-    ports:
-      - ${PORT}:8080
+    image: brandawg93/peanut:latest
     environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
       - NUT_HOST=${HOST_IP}
       - NUT_PORT=3493
       - WEB_PORT=8080
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
+    ports:
+      - ${PORT}:8080
     network_mode: bridge
     restart: unless-stopped

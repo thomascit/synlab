@@ -1,0 +1,15 @@
+services:
+  overseerr:
+    container_name: overseerr
+    image: ghcr.io/hotio/overseerr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=002
+      - TZ={TZ}
+    volumes:
+      - ${APPDATA}/overseerr:/config
+    ports:
+      - ${PORT}:5055
+    network_mode: bridge
+    restart: unless-stopped

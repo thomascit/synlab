@@ -5,13 +5,21 @@ services:
     cap_add:
       - SYS_RAWIO
       - SYS_ADMIN
-    ports:
-      - ${PORT1}:8080 # webapp
-      - ${PORT2}:8086 # influxDB admin
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - SCRUTINY_WEB_INFLUXDB_TOKEN=${RANDOM_TOKEN}
+      - SCRUTINY_WEB_INFLUXDB_INIT_USERNAME=${USERNAME}
+      - SCRUTINY_WEB_INFLUXDB_INIT_PASSWORD=${PASSWORD}
     volumes:
       - /run/udev:/run/udev:ro
       - ${APPDATA}/scrutiny:/opt/scrutiny/config
       - ${APPDATA}/scrutiny/influxdb:/opt/scrutiny/influxdb
+    ports:
+      - ${PORT1}:8080
+      - ${PORT2}:8086
+    network_mode: bridge
+    restart: unless-stopped
     devices:
       - /dev/sda:/dev/sda
       - /dev/sdb:/dev/sdb
@@ -21,8 +29,3 @@ services:
       - /dev/sdeb:/dev/sdeb
       - /dev/sdec:/dev/sdec
       - /dev/sded:/dev/sded
-    environment:
-      - SCRUTINY_WEB_INFLUXDB_TOKEN=${RANDOM_TOKEN}
-      - SCRUTINY_WEB_INFLUXDB_INIT_USERNAME=${USERNAME}
-      - SCRUTINY_WEB_INFLUXDB_INIT_PASSWORD=${PASSWORD}
-    restart: unless-stopped

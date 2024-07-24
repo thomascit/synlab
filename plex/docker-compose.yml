@@ -1,0 +1,17 @@
+services:
+  plex:
+    container_name: plex
+    image: ghcr.io/hotio/plex
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PLEX_BETA_INSTALL=false
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/plex:/config
+      - ${DATA}/media:/data
+    network_mode: host
+    restart: unless-stopped
+    devices:
+      - /dev/dri:/dev/dri

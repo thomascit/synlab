@@ -1,0 +1,16 @@
+services:
+  sonarr:
+    container_name: sonarr
+    image: ghcr.io/hotio/sonarr:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/sonarr:/config
+      - ${DATA}:/data    
+    ports:
+      - ${PORT}:8989
+    network_mode: bridge
+    restart: unless-stopped

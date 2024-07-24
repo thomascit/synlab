@@ -1,0 +1,16 @@
+services:
+  radarr:
+    container_name: radarr
+    image: ghcr.io/hotio/radarr:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/radarr:/config
+      - ${DATA}:/data
+    ports:
+      - ${PORT}:7878
+    network_mode: bridge
+    restart: unless-stopped

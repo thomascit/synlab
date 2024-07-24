@@ -1,0 +1,15 @@
+services:
+  prowlarr:
+    container_name: prowlarr
+    image: ghcr.io/hotio/prowlarr:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/prowlarr:/config
+    ports:
+      - ${USER}:9696
+    network_mode: bridge
+    restart: unless-stopped

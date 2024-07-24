@@ -1,0 +1,15 @@
+services:
+  tautulli:
+    container_name: tautulli
+    image: ghcr.io/hotio/tautulli:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/tautulli:/config
+    ports:
+      - ${PORT}:8181
+    network_mode: bridge
+    restart: unless-stopped

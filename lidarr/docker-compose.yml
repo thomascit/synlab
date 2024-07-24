@@ -1,0 +1,16 @@
+services:
+  lidarr:
+    container_name: lidarr
+    image: ghcr.io/hotio/lidarr:latest
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+    volumes:
+      - ${APPDATA}/lidarr:/config
+      - ${DATA}:/data
+    ports:
+      - ${PORT}:8686
+    network_mode: bridge
+    restart: unless-stopped
