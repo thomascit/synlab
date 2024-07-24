@@ -9,6 +9,7 @@ services:
       - UMASK=002
     volumes:
       - ${APPDATA}/tautulli:/config
+      - ${APPDATA}/plex:/plex:ro
     ports:
       - ${PORT}:8181
     network_mode: bridge
