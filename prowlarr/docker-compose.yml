@@ -10,6 +10,6 @@ services:
     volumes:
       - ${APPDATA}/prowlarr:/config
     ports:
-      - ${USER}:9696
+      - ${PORTS}:9696
     network_mode: bridge
     restart: unless-stopped
