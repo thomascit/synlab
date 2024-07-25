@@ -7,5 +7,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - LOG_LEVEL=debug
+    ports:
+      - ${PORT}:8191
     network_mode: bridge
     restart: unless-stopped
