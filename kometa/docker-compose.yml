@@ -1,0 +1,16 @@
+services:
+  kometa:
+    container_name: kometa
+    image: kometateam/kometa
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - KOMETA_TIMES=06:00
+#      - KOMETA_COLLECTIONS_ONLY=true
+#      - KOMETA_OVERLAYS_ONLY=true
+#      - KOMETA_RUN=true
+    volumes:
+      - ${APPDATA}/kometa:/config
+    network_mode: bridge
+    restart: unless-stopped
