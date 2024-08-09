@@ -6,12 +6,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PLEX_BETA_INSTALL=false
       - UMASK=002
     volumes:
       - ${APPDATA}/plex:/config
       - ${DATA}/media:/data
-    network_mode: host
+    networks:
+      - my_default
+    ports:
+      - 32400:32400
     restart: unless-stopped
     devices:
       - /dev/dri:/dev/dri
+
+networks:
+  my_default:
+    external: true
