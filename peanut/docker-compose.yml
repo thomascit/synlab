@@ -1,7 +1,7 @@
 services:
   peanut:
     container_name: peanut
-    image: brandawg93/peanut:latest
+    image: brandawg93/peanut
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

@@ -1,7 +1,7 @@
 services:
   prowlarr:
     container_name: prowlarr
-    image: ghcr.io/hotio/prowlarr:latest
+    image: ghcr.io/hotio/prowlarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
