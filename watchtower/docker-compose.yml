@@ -11,6 +11,7 @@ services:
       - WATCHTOWER_CLEANUP=true
       - WATCHTOWER_DISABLE_CONTAINERS=${CONTAINERS}
       - WATCHTOWER_SCHEDULE=${SCHEDULE}
+      - WATCHTOWER_NOTIFICATION_URL=${URL}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
