@@ -1,7 +1,7 @@
 services:
   lidarr:
     container_name: lidarr
-    image: ghcr.io/hotio/lidarr:latest
+    image: ghcr.io/hotio/lidarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,5 +12,13 @@ services:
       - ${DATA}:/data
     ports:
       - ${PORT}:8686
-    network_mode: bridge
+    networks: 
+      - my_default
+      - gluetun_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
+  gluetun_default:
+    external: true

@@ -5,8 +5,9 @@ services:
     environment:
       - UID=${PUID}
       - GID=${PGID}
+      - UMASK=002
     volumes:
-      - ${DATA}/metube:/downloads
+      - ${DATA}/downloads/other:/downloads
     ports:
       - ${PORT}:8081
     network_mode: bridge

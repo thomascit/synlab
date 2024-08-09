@@ -1,7 +1,7 @@
 services:
   bazarr:
     container_name: bazarr
-    image: ghcr.io/hotio/bazarr:latest
+    image: ghcr.io/hotio/bazarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,5 +12,10 @@ services:
       - ${DATA}/media:/data/media
     ports:
       - ${PORT}:6767
-    network_mode: bridge
+    networks: 
+      - my_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true

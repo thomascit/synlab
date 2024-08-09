@@ -1,7 +1,7 @@
 services:
   tautulli:
     container_name: tautulli
-    image: ghcr.io/hotio/tautulli:latest
+    image: ghcr.io/hotio/tautulli
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,5 +12,10 @@ services:
       - ${APPDATA}/plex:/plex:ro
     ports:
       - ${PORT}:8181
-    network_mode: bridge
+    networks:
+      - my_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true

@@ -1,7 +1,7 @@
 services:
   readarr:
     container_name: readarr
-    image: ghcr.io/hotio/readarr:latest
+    image: ghcr.io/hotio/readarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,5 +12,13 @@ services:
       - ${DATA}:/data
     ports:
       - ${PORT}:8787
-    network_mode: bridge
+    networks: 
+      - my_default
+      - gluetun_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
+  gluetun_default:
+    external: true

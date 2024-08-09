@@ -1,7 +1,7 @@
 services:
   radarr:
     container_name: radarr
-    image: ghcr.io/hotio/radarr:latest
+    image: ghcr.io/hotio/radarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -12,5 +12,13 @@ services:
       - ${DATA}:/data
     ports:
       - ${PORT}:7878
-    network_mode: bridge
+    networks: 
+      - my_default
+      - gluetun_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
+  gluetun_default:
+    external: true

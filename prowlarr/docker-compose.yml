@@ -11,5 +11,13 @@ services:
       - ${APPDATA}/prowlarr:/config
     ports:
       - ${PORT}:9696
-    network_mode: bridge
+    networks: 
+      - my_default
+      - gluetun_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
+  gluetun_default:
+    external: true

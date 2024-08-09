@@ -9,7 +9,12 @@ services:
       - TZ={TZ}
     volumes:
       - ${APPDATA}/overseerr:/config
+    networks:
+      - my_default
     ports:
       - ${PORT}:5055
-    network_mode: bridge
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
