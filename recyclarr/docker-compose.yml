@@ -1,0 +1,11 @@
+services:
+  recyclarr:
+    container_name: recyclarr
+    image: ghcr.io/recyclarr/recyclarr
+    environment:
+      - TZ={TZ}
+    user: ${PUID}:${PGID}
+    volumes:
+      - ${APPDATA}/recyclarr:/config
+    network_mode: bridge
+    restart: unless-stopped
