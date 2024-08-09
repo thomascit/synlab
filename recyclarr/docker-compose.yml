@@ -7,5 +7,10 @@ services:
     user: ${PUID}:${PGID}
     volumes:
       - ${APPDATA}/recyclarr:/config
-    network_mode: bridge
+    networks:
+      - my_default
     restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
