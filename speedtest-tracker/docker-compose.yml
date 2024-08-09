@@ -7,13 +7,9 @@ services:
       - PGID=${PGID}
       - PUID=${PUID}
       - OOKLA_EULA_GDPR=true
+      - SPEEDTEST_SCHEDULE=${CRON_SCHEDULE}
     volumes:
       - ${APPDATA}/speedtest-tracker:/config
-    logging:
-      driver: "json-file"
-      options:
-        max-file: "10"
-        max-size: "200k"
     ports:
       - ${PORT}:80
     network_mode: bridge
