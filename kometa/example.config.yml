@@ -1,0 +1,223 @@
+libraries:
+  Movies:
+    operations:
+      assets_for_all: true
+
+    collection_files:
+    - default: basic
+    - default: imdb
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,imdb
+        item_radarr_tag: imdb,kometa
+    - default: separator_award
+    - default: oscars
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,oscars
+        item_radarr_tag: oscars,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: emmy
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,emmy
+        item_radarr_tag: emmy,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: bafta
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,bafta
+        item_radarr_tag: bafta,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: golden
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,golden
+        item_radarr_tag: golden,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: pca
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,pca
+        item_radarr_tag: pca,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: sundance
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,sundance
+        item_radarr_tag: sundance,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: razzie
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,razzie
+        item_radarr_tag: razzie,kometa
+        data:
+          starting: latest-25
+          ending: latest
+    - default: based
+      template_variables:
+        radarr_add_missing: true
+        radarr_tag: kometa,based
+        item_radarr_tag: based,kometa
+    - default: seasonal
+      template_variables:
+        schedule: daily
+        radarr_add_missing: true
+        radarr_tag: kometa,seasonal
+        item_radarr_tag: seasonal,kometa
+
+    overlay_files:
+    - default: ribbon
+    - default: versions
+    - default: resolution
+
+  TV Shows:
+
+    collection_files:
+    - default: basic
+    - default: imdb
+    - default: network
+    - default: tautulli
+
+    overlay_files:
+    - default: ribbon
+    - default: status
+    - default: versions
+
+playlist_files:
+- file: config/playlists/playlists.yml
+
+settings:
+  run_order:
+  - metadata
+  - overlays
+  - collections
+  - operations
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 0
+  create_asset_folders: false
+  prioritize_assets: true
+  dimensional_asset_rename: false
+  download_url_assets: false
+  show_missing_season_assets: false
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 1
+  default_collection_order: alpha
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_options: true
+  show_missing: true
+  show_missing_assets: false
+  save_report: false
+  tvdb_language: eng
+  item_refresh_delay: 0
+  playlist_sync_to_users: all
+  playlist_report: true
+  verify_ssl: true
+  overlay_artwork_filetype: jpg
+  overlay_artwork_quality: 75
+  ignore_ids:
+  ignore_imdb_ids:
+  playlist_exclude_users:
+  custom_repo:
+
+plex:
+  url: <<PLEX_IP>>
+  token: <<PLEX_TKN>>
+  timeout: 60
+  verify_ssl:
+  db_cache:
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+
+tmdb:
+  apikey: <<TMDB_API>>
+  language: en
+  region: US
+  cache_expiration: 60
+
+tautulli:
+  url: <<TAUTULLI_IP>>
+  apikey: <<TAUTULLI_API>>
+
+radarr:
+  url: <<RADARR_IP>>
+  token: <<RADARR_API>>
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor_existing: false
+  root_folder_path: /data/media/movies
+  monitor: true
+  availability: announced
+  quality_profile: Custom
+  tag: kometa
+  search: false
+  ignore_cache: false
+  radarr_path:
+  plex_path:
+
+sonarr:
+  url: <<SONARR_IP>>
+  token: <<SONARR_API>>
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor_existing: false
+  root_folder_path: /data/media/tv
+  monitor: all
+  quality_profile: Custom
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  tag: kometa
+  search: false
+  cutoff_search: false
+  ignore_cache: false
+  sonarr_path:
+  plex_path:
+
+trakt:
+  client_id: <<TRAKT_ID>>
+  client_secret: <<TRAKT_SECRET>>
+  pin:
+  authorization:
+    access_token: 
+    token_type: 
+    expires_in: 
+    refresh_token: 
+    scope: 
+    created_at: 
+
+webhooks:
+  error: <<WEBHOOK>>
+  run_start: <<WEBHOOK>>
+  run_end: <<WEBHOOK>>
+  changes: <<WEBHOOK>>
+  delete: <<WEBHOOK>>
+  version: <<WEBHOOK>>
