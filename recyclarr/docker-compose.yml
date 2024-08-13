@@ -3,7 +3,7 @@ services:
     container_name: recyclarr
     image: ghcr.io/recyclarr/recyclarr
     environment:
-      - TZ={TZ}
+      - TZ=${TZ}
     user: ${PUID}:${PGID}
     volumes:
       - ${APPDATA}/recyclarr:/config
