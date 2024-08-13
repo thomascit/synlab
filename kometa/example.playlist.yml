@@ -1,0 +1,41 @@
+playlists:
+  Halloween 2024:
+    sync_mode: sync
+    radarr_add_missing: true
+    radarr_search: true
+    file_poster: config/playlists/halloween_2024.jpeg
+    libraries: Movies
+    imdb_list: 
+      list_id: ls#########
+  Halloween 2023:
+    sync_mode: sync
+    radarr_add_missing: true
+    radarr_search: true
+    file_poster: config/playlists/halloween_2023.jpeg
+    libraries: Movies
+    imdb_list: 
+      list_id: ls#########
+  Halloween 2022:
+    sync_mode: sync
+    radarr_add_missing: true
+    radarr_search: true
+    file_poster: config/playlists/halloween_2022.jpeg
+    libraries: Movies
+    imdb_list: 
+      list_id: ls#########
+  Halloween 2021:
+    sync_mode: sync
+    radarr_add_missing: true
+    radarr_search: true
+    file_poster: config/playlists/halloween_2021.jpeg
+    libraries: Movies
+    imdb_list: 
+      list_id: ls#########
+  Halloween 2020:
+    sync_mode: sync
+    radarr_add_missing: true
+    radarr_search: true
+    file_poster: config/playlists/halloween_2020.jpeg
+    libraries: Movies
+    imdb_list: 
+      list_id: ls#########
