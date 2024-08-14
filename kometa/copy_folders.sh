@@ -1,5 +1,5 @@
 #!/bin/bash
-# Used to copy movie folders to assets folder
+## Used to copy movie folders to assets folder ##
 
 # Define the source and destination directories
 SOURCE_DIR="/path/to/media/movies"
