@@ -1,4 +1,5 @@
 libraries:
+  
   Movies:
     operations:
       assets_for_all: true
