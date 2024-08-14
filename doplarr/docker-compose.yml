@@ -1,0 +1,19 @@
+services:
+  doplarr:
+    container_name: doplarr
+    image: ghcr.io/hotio/doplarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DISCORD__TOKEN=${DISCORD_TOKEN}
+      - OVERSEERR__API=${OVERSEERR_API}
+      - OVERSEERR__URL=http://overseerr:5055
+      - OVERSEERR__DEFAULT_ID=1 # Default User ID
+    networks: 
+      - my_default
+    restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
