@@ -22,7 +22,7 @@ data="{"data-root":"/var/packages/ContainerManager/var/docker","log-driver":"db"
 echo $data > $file
 ````
 
-### Some of the compose templates rely on an existing docket network:
+### Create docker network (needed for some templates):
 
 ```
 docker network create my-default
