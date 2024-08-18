@@ -1,12 +1,13 @@
 services:
   plex:
     container_name: plex
-    image: ghcr.io/hotio/plex
+    image: lscr.io/linuxserver/plex
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
       - UMASK=002
+      # - PLEX_CLAIM=
     volumes:
       - ${APPDATA}/plex:/config
       - ${DATA}/media:/data
