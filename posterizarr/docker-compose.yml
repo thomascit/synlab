@@ -1,0 +1,21 @@
+services:
+  posterizarr:
+    container_name: posterizarr
+    image: ghcr.io/fscorrupt/docker-posterizarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=002
+      - TERM=xterm
+      - RUN_TIME=5:00
+    volumes:
+      - ${APPDATA}/posterizarr:/config
+      - ${APPDATA}/kometa/assets:/assets
+    networks:
+      - my_default
+    restart: unless-stopped
+
+networks:
+  my_default:
+    external: true
