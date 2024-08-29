@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   posterizarr:
     container_name: posterizarr
@@ -8,14 +13,10 @@ services:
       - TZ=${TZ}
       - UMASK=002
       - TERM=xterm
-      - RUN_TIME=5:00
+      - RUN_TIME=9:00
     volumes:
       - ${APPDATA}/posterizarr:/config
       - ${APPDATA}/kometa/assets:/assets
     networks:
       - my_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true

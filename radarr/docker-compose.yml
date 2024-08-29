@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   radarr:
     container_name: radarr
@@ -11,14 +16,7 @@ services:
       - ${APPDATA}/radarr:/config
       - ${DATA}:/data
     ports:
-      - ${PORT}:7878
+      - 7878:7878
     networks: 
       - my_default
-      - gluetun_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
-  gluetun_default:
-    external: true

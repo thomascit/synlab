@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   prowlarr:
     container_name: prowlarr
@@ -10,14 +15,7 @@ services:
     volumes:
       - ${APPDATA}/prowlarr:/config
     ports:
-      - ${PORT}:9696
+      - 9696:9696
     networks: 
       - my_default
-      - gluetun_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
-  gluetun_default:
-    external: true
