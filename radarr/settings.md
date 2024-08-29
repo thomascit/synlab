@@ -7,5 +7,5 @@
 ## Folder Naming
 
 ```
-{Movie CleanTitle} ({Release Year}) {tmdb-{TmdbId}}
+{Movie CleanTitle} ({Release Year}) {imdb-{ImdbId}}
 ```
