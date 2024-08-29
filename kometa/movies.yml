@@ -1,0 +1,25 @@
+collections: 
+  Sly and Arnie:
+    trakt_list: https://trakt.tv/users/tc_211/lists/sly-and-arnie 
+    collection_order: random
+    sync_mode: sync
+    visible_home: true
+    visible_shared: true
+  Bruno and D:
+    trakt_list: https://trakt.tv/users/tc_211/lists/bruno-and-d
+    collection_order: random
+    sync_mode: sync
+    visible_home: true
+    visible_shared: true
+  Disney Animation Studios:
+    trakt_list: https://trakt.tv/users/tc_211/lists/disney-animation-studios
+    collection_order: random
+    sync_mode: sync
+    visible_home: true
+    visible_shared: true
+  Car Movies:
+    trakt_list: https://trakt.tv/users/tc_211/lists/car-movies
+    collection_order: random
+    sync_mode: sync
+    visible_home: true
+    visible_shared: true
