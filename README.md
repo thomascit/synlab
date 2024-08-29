@@ -4,7 +4,7 @@
 - Example config files
 - Other related scripts
 
-### To install Gluetun kernel module
+### To install Gluetun kernel module (Only if used)
 
 ```
 sudo insmod /lib/modules/tun.ko
