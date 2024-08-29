@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   lidarr:
     container_name: lidarr
@@ -11,14 +16,7 @@ services:
       - ${APPDATA}/lidarr:/config
       - ${DATA}:/data
     ports:
-      - ${PORT}:8686
+      - 8686:8686
     networks: 
       - my_default
-      - gluetun_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
-  gluetun_default:
-    external: true

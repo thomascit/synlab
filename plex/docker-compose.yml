@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   plex:
     container_name: plex
@@ -18,7 +23,3 @@ services:
     restart: unless-stopped
     devices:
       - /dev/dri:/dev/dri
-
-networks:
-  my_default:
-    external: true
