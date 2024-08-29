@@ -1,3 +1,4 @@
+---
 services:
   speedtest:
     container_name: speedtest-tracker
@@ -7,10 +8,10 @@ services:
       - PGID=${PGID}
       - PUID=${PUID}
       - OOKLA_EULA_GDPR=true
-      - SPEEDTEST_SCHEDULE=${CRON_SCHEDULE}
+      - SPEEDTEST_SCHEDULE=0 * * * *
     volumes:
       - ${APPDATA}/speedtest-tracker:/config
     ports:
-      - ${PORT}:80
+      - 8765:80
     network_mode: bridge
     restart: unless-stopped

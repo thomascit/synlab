@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   tautulli:
     container_name: tautulli
@@ -11,11 +16,7 @@ services:
       - ${APPDATA}/tautulli:/config
       - ${APPDATA}/plex:/plex:ro
     ports:
-      - ${PORT}:8181
+      - 8181:8181
     networks:
       - my_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true

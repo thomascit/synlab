@@ -1,7 +1,12 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   readarr:
     container_name: readarr
-    image: ghcr.io/hotio/readarr
+    image: lscr.io/linuxserver/readarr:develop
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -11,14 +16,7 @@ services:
       - ${APPDATA}/readarr:/config
       - ${DATA}:/data
     ports:
-      - ${PORT}:8787
+      - 8787:8787
     networks: 
       - my_default
-      - gluetun_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
-  gluetun_default:
-    external: true

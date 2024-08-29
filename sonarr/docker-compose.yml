@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   sonarr:
     container_name: sonarr
@@ -11,16 +16,7 @@ services:
       - ${APPDATA}/sonarr:/config
       - ${DATA}:/data    
     ports:
-      - ${PORT}:8989
+      - 8989:8989
     networks: 
       - my_default
-    networks: 
-      - my_default
-      - gluetun_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
-  gluetun_default:
-    external: true

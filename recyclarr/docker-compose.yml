@@ -1,16 +1,17 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   recyclarr:
     container_name: recyclarr
     image: ghcr.io/recyclarr/recyclarr
+    user: ${PUID}:${PGID}
     environment:
       - TZ=${TZ}
-    user: ${PUID}:${PGID}
     volumes:
       - ${APPDATA}/recyclarr:/config
     networks:
       - my_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true
