@@ -1,3 +1,9 @@
+---
+
+networks:
+  my_default:
+    external: true
+
 services:
   doplarr:
     container_name: doplarr
@@ -6,14 +12,12 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - DISCORD__TOKEN=${DISCORD_TOKEN}
+      - DISCORD__TOKEN=${DOPLARR_DISCORD_TOKEN}
       - OVERSEERR__API=${OVERSEERR_API}
       - OVERSEERR__URL=http://overseerr:5055
       - OVERSEERR__DEFAULT_ID=1 # Default User ID
+    volumes:
+      - ${APPDATA}/doplarr:/config
     networks: 
       - my_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true

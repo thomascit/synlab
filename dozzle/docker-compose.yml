@@ -1,3 +1,4 @@
+---
 services:
   dozzle:
     container_name: dozzle
@@ -8,6 +9,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     ports:
-      - ${PORT}:8080
+      - 9999:8080
     network_mode: bridge
     restart: unless-stopped
