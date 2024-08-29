@@ -1,0 +1,21 @@
+---
+networks:
+  my_default:
+    external: true
+
+services:
+  sabnzbd-lidarr:
+    image: lscr.io/linuxserver/sabnzbd
+    container_name: sabnzbd-lidarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${APPDATA}/sabnzbd-lidarr:/config
+      - ${DATA}/downloads:/downloads
+    ports:
+      - 5080:8080
+    networks: 
+      - my_default
+    restart: unless-stopped

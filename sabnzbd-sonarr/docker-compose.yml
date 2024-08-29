@@ -1,0 +1,21 @@
+---
+networks:
+  my_default:
+    external: true
+
+services:
+  sabnzbd-sonarr:
+    image: lscr.io/linuxserver/sabnzbd
+    container_name: sabnzbd-sonarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${APPDATA}/sabnzbd-sonarr:/config
+      - ${DATA}/downloads:/downloads
+    ports:
+      - 6080:8080
+    networks: 
+      - my_default
+    restart: unless-stopped

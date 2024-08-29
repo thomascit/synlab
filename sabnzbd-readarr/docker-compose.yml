@@ -1,20 +1,21 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
-  sabnzbd:
+  sabnzbd-readarr:
     image: lscr.io/linuxserver/sabnzbd
-    container_name: sabnzbd
+    container_name: sabnzbd-readarr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - ${APPDATA}/sabnzbd:/config
+      - ${APPDATA}/sabnzbd-readarr:/config
       - ${DATA}/downloads:/downloads
     ports:
-      - ${PORT}:8080
+      - 4080:8080
     networks: 
       - my_default
     restart: unless-stopped
-
-networks:
-  my_default:
-    external: true

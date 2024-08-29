@@ -1,0 +1,21 @@
+---
+networks:
+  my_default:
+    external: true
+
+services:
+  sabnzbd-radarr:
+    image: lscr.io/linuxserver/sabnzbd
+    container_name: sabnzbd-radarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - ${APPDATA}/sabnzbd-radarr:/config
+      - ${DATA}/downloads:/downloads
+    ports:
+      - 7080:8080
+    networks: 
+      - my_default
+    restart: unless-stopped
