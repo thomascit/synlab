@@ -1,3 +1,8 @@
+---
+networks:
+  my_default:
+    external: true
+
 services:
   kometa:
     container_name: kometa
@@ -13,20 +18,22 @@ services:
       # - KOMETA_PLAYLISTS_ONLY=true
       # - KOMETA_OPERATIONS_ONLY=true
       # - KOMETA_OVERLAYS_ONLY=true
-      - KOMETA_TIMES=06:00
-      - KOMETA_PLEX_IP=${KOMETA_PLEX_IP}
-      - KOMETA_PLEX_TKN=${KOMETA_PLEX_TKN}
-      - KOMETA_TMDB_API=${KOMETA_TMDB_API}
+      - KOMETA_TIMES=10:00
+      - KOMETA_PLEX_IP=http://plex:32400
+      - KOMETA_PLEX_TKN=${PLEX_TKN}
+      - KOMETA_TMDB_API=${TMDB_API}
+      - KOMETA_MDBLIST_API=${MDBLIST_API}
       - KOMETA_TRAKT_ID=${KOMETA_TRAKT_ID}
       - KOMETA_TRAKT_SECRET=${KOMETA_TRAKT_SECRET}
-      - KOMETA_TAUTULLI_IP=${KOMETA_TAUTULLI_IP}
-      - KOMETA_TAUTULLI_API=${KOMETA_TAUTULLI_API}
-      - KOMETA_RADARR_IP=${KOMETA_RADARR_IP}
-      - KOMETA_RADARR_API=${KOMETA_RADARR_API}
-      - KOMETA_SONARR_IP=${KOMETA_SONARR_IP}
-      - KOMETA_SONARR_API=${KOMETA_SONARR_API}
+      - KOMETA_TAUTULLI_IP=http://tautulli:8181
+      - KOMETA_TAUTULLI_API=${TAUTULLI_API}
+      - KOMETA_RADARR_IP=http://radarr:7878
+      - KOMETA_RADARR_API=${RADARR_API}
+      - KOMETA_SONARR_IP=http://sonarr:8989
+      - KOMETA_SONARR_API=${SONARR_API}
       - KOMETA_WEBHOOK=${KOMETA_WEBHOOK}
     volumes:
       - ${APPDATA}/kometa:/config
-    network_mode: bridge
+    networks:
+      - my_default
     restart: unless-stopped
