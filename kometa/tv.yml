@@ -1,0 +1,6 @@
+collections: 
+  My Animated TV:
+    trakt_list: https://trakt.tv/users/tc_211/lists/my-animated-tv
+    collection_order: alpha 
+    sync_mode: sync
+    visible_home: true

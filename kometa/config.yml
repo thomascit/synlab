@@ -1,0 +1,268 @@
+libraries:
+
+  Movies:
+
+    metadata_files:
+      - file: config/movies-metadata.yml
+
+    settings:
+      asset_directory:
+        - config/assets/Movies
+        - config/assets/Collections
+        - config/assets/Playlists
+
+    operations:
+      assets_for_all: true
+
+    template_variables:
+      use_separator: true
+
+    collection_files:
+      - file: config/movies.yml
+      - default: tautulli
+      - default: genre
+        template_variables:
+          visible_home: true
+          visible_shared: true
+      - default: basic
+        template_variables:
+          visible_home_released: true
+          visible_shared_released: true
+      - default: imdb
+        template_variables:
+          visible_home_top: true
+          visible_shared_top: true
+      - default: based
+        template_variables:
+          visible_home_video_games: true
+          visible_shared_video_games: true
+      - default: oscars
+        template_variables:
+          use_year_collections: false
+          visible_home_best_picture: true
+          visible_shared_best_picture: true
+      - default: emmy
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: bafta
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: golden
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: pca
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: sundance
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: razzie
+        template_variables:
+          use_year_collections: false
+          visible_home: true
+          visible_shared: true
+      - default: seasonal
+        template_variables:
+          schedule: daily
+          visible_home_years: range(12/26-01/04)
+          visible_home_valentine: range(02/01-02/29)
+          visible_home_patrick: range(03/01-03/18)
+          visible_home_easter: range(03/20-04/30)
+          visible_home_mother: range(05/05-05/10)
+          visible_home_memorial: range(5/18-6/7)
+          visible_home_father: range(06/15-06/20)
+          visible_home_independence: range(06/23-07/11)
+          visible_home_labor: range(09/01-09/10)
+          visible_home_halloween: range(10/01-10/31)
+          visible_home_veteran: range(11/01-11/30)
+          visible_home_thanksgiving: range(11/01-11/30)
+          visible_home_christmas: range(12/01-12/31)
+          visible_home_aapi: range(04/30-05/31)
+          visible_home_disabilities: range(12/02-12/04)
+          visible_home_black_history: range(02/01-03/01)
+          visible_home_lgbtq: range(05/31-06/30)
+          visible_home_latinx: range(09/15-10/15)
+          visible_home_women: range(02/28-03/31)
+          visible_shared_years: range(12/26-01/04)
+          visible_shared_valentine: range(02/01-02/29)
+          visible_shared_patrick: range(03/01-03/18)
+          visible_shared_easter: range(03/20-04/30)
+          visible_shared_mother: range(05/05-05/10)
+          visible_shared_memorial: range(5/18-6/7)
+          visible_shared_father: range(06/15-06/20)
+          visible_shared_independence: range(06/23-07/11)
+          visible_shared_labor: range(09/01-09/10)
+          visible_shared_halloween: range(10/01-10/31)
+          visible_shared_veteran: range(11/01-11/30)
+          visible_shared_thanksgiving: range(11/01-11/30)
+          visible_shared_christmas: range(12/01-12/31)
+          visible_shared_aapi: range(04/30-05/31)
+          visible_shared_disabilities: range(12/02-12/04)
+          visible_shared_black_history: range(02/01-03/01)
+          visible_shared_lgbtq: range(05/31-06/30)
+          visible_shared_latinx: range(09/15-10/15)
+          visible_shared_women: range(02/28-03/31)
+
+    overlay_files:
+      - default: ribbon
+      - default: versions
+      - default: resolution
+
+  TV Shows:
+
+    settings:
+      asset_directory: config/assets/TV\ Shows
+
+    operations:
+      assets_for_all: true
+
+    collection_files:
+      - file: config/tv.yml
+      - default: basic
+      - default: network
+      - default: tautulli
+
+    overlay_files:
+      - default: ribbon
+      - default: status
+      - default: versions
+
+playlist_files:
+  - file: config/playlists.yml
+
+settings:
+  run_order:
+    - metadata
+    - operations
+    - overlays
+    - collections
+
+  cache: true
+  cache_expiration: 60
+  asset_directory: config/assets
+  asset_folders: true
+  asset_depth: 1
+  create_asset_folders: false
+  prioritize_assets: true
+  dimensional_asset_rename: false
+  download_url_assets: true
+  show_missing_season_assets: true
+  show_missing_episode_assets: false
+  show_asset_not_needed: true
+  sync_mode: append
+  minimum_items: 1
+  default_collection_order: random
+  delete_below_minimum: true
+  delete_not_scheduled: false
+  run_again_delay: 2
+  missing_only_released: false
+  only_filter_missing: false
+  show_unmanaged: true
+  show_unconfigured: true
+  show_filtered: false
+  show_options: true
+  show_missing: true
+  show_missing_assets: false
+  save_report: false
+  tvdb_language: eng
+  item_refresh_delay: 0
+  playlist_sync_to_users: all
+  playlist_report: true
+  verify_ssl: true
+  overlay_artwork_filetype: jpg
+  overlay_artwork_quality: 75
+  ignore_ids:
+  ignore_imdb_ids:
+  playlist_exclude_users:
+  custom_repo:
+
+plex:
+  url: <<PLEX_IP>>
+  token: <<PLEX_TKN>>
+  timeout: 60
+  verify_ssl:
+  db_cache:
+  clean_bundles: false
+  empty_trash: false
+  optimize: false
+
+tmdb:
+  apikey: <<TMDB_API>>
+  language: en
+  region: US
+  cache_expiration: 60
+
+tautulli:
+  url: <<TAUTULLI_IP>>
+  apikey: <<TAUTULLI_API>>
+
+radarr:
+  url: <<RADARR_IP>>
+  token: <<RADARR_API>>
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor_existing: false
+  root_folder_path: /data/media/movies
+  monitor: false
+  availability: released
+  quality_profile: Custom
+  tag: kometa
+  search: false
+  ignore_cache: false
+  radarr_path:
+  plex_path:
+
+sonarr:
+  url: <<SONARR_IP>>
+  token: <<SONARR_API>>
+  add_missing: false
+  add_existing: false
+  upgrade_existing: false
+  monitor_existing: false
+  root_folder_path: /data/media/tv
+  monitor: none
+  quality_profile: Custom
+  language_profile: English
+  series_type: standard
+  season_folder: true
+  tag: kometa
+  search: false
+  cutoff_search: false
+  ignore_cache: false
+  sonarr_path:
+  plex_path:
+
+trakt:
+  client_id: <<TRAKT_ID>>
+  client_secret: <<TRAKT_SECRET>>
+  pin:
+  authorization:
+    access_token: 
+    token_type: 
+    expires_in: 
+    refresh_token: 
+    scope: 
+    created_at: 
+
+mdblist:
+  apikey: <<MDBLIST_API>>
+  cache_expiration: 60
+
+webhooks:
+  error: <<WEBHOOK>>
+  run_start: <<WEBHOOK>>
+  run_end: <<WEBHOOK>>
+  changes: <<WEBHOOK>>
+  delete: <<WEBHOOK>>
+  version: <<WEBHOOK>>

@@ -1,0 +1,122 @@
+metadata:
+
+  Alien:
+    match:
+      mapping_id: 348
+    sort_title: Alien 1
+  Aliens:
+    match:
+      mapping_id: 679
+    sort_title: Alien 2
+  Alien 3:
+    match:
+      mapping_id: 8077
+    sort_title: Alien 3
+  Alien Resurrection:
+    match:
+      mapping_id: 8078
+    sort_title: Alien 4
+  Alien Covenant:
+    match:
+      mapping_id: 126889
+    sort_title: Alien 5
+  American Wedding:
+    match:
+      mapping_id: 8273
+    sort_title: American Pie 3
+  American Reunion:
+    match:
+      mapping_id: 71552
+    sort_title: American Pie 4
+  American Pie Band Camp:
+    match:
+      mapping_id: 8274
+    sort_title: American Pie 5
+  American Pie The Naked Mile:
+    match:
+      mapping_id: 8275
+    sort_title: American Pie 6
+  American Pie Beta House:
+    match:
+      mapping_id: 8277
+    sort_title: American Pie 7
+  American Pie The Book of Love:
+    match:
+      mapping_id: 26123
+    sort_title: American Pie 8
+  Annabelle Creation:
+    match:
+      mapping_id: 396422
+    sort_title: Annabelle 2
+  Annabelle Comes Home:
+    match:
+      mapping_id: 521029
+    sort_title: Annabelle 3
+  Bad Boys for Life:
+    match:
+      mapping_id: 38700
+    sort_title: Bad Boys III
+  Bad Boys Ride or Die:
+    match:
+      mapping_id: 573435
+    sort_title: Bad Boys IIII
+  Blade Trinity:
+    match:
+      mapping_id: 36648
+    sort_title: Blade III
+  Childs Play:
+    match:
+      mapping_id: 533642
+    sort_title: Child's Play 0
+  Halloween RZ:
+    match:
+      mapping_id: 2082
+    sort_title: Halloween RZ
+  Halloween RZ 2:
+    match:
+      mapping_id: 24150
+    sort_title: Halloween RZ 2
+  Halloween 1:
+    match:
+      mapping_id: 948
+    sort_title: Halloween 1
+  Halloween II:
+    match:
+      mapping_id: 11281
+    sort_title: Halloween 2
+  Halloween Season of the Witch:
+    match:
+      mapping_id: 10676
+    sort_title: Halloween 3
+  Halloween 4 The Return of Michael Myers:
+    match:
+      mapping_id: 11357
+    sort_title: Halloween 4
+  Halloween 5 The Revenge of Michael Myers:
+    match:
+      mapping_id: 11361
+    sort_title: Halloween 5
+  Halloween The Curse of Michael Myers:
+    match:
+      mapping_id: 10987
+    sort_title: Halloween 6
+  Halloween H20 20 Years Later:
+    match:
+      mapping_id: 11675
+    sort_title: Halloween 7
+  Halloween Resurrection:
+    match:
+      mapping_id: 11442
+    sort_title: Halloween 8
+  Halloween:
+    match:
+      mapping_id: 424139
+    sort_title: Halloween 9
+  Halloween Kills:
+    match:
+      mapping_id: 610253
+    sort_title: Halloween 10
+  Halloween Ends:
+    match:
+      mapping_id: 616820
+    sort_title: Halloween 11

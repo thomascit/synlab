@@ -1,0 +1,26 @@
+playlists:
+  Halloween 2024:
+    sync_mode: sync
+    file_poster: config/assets/Playlists/Halloween2024.jpeg
+    libraries: Movies
+    trakt_list: https://trakt.tv/users/tc_211/lists/halloween-2024
+  Halloween 2023:
+    sync_mode: sync
+    file_poster: config/assets/Playlists/Halloween2023.jpeg
+    libraries: Movies
+    trakt_list: https://trakt.tv/users/tc_211/lists/halloween-2023
+  Halloween 2022:
+    sync_mode: sync
+    file_poster: config/assets/Playlists/Halloween2022.jpeg
+    libraries: Movies
+    trakt_list: https://trakt.tv/users/tc_211/lists/halloween-2022
+  Halloween 2021:
+    sync_mode: sync
+    file_poster: config/assets/Playlists/Halloween2021.jpeg
+    libraries: Movies
+    trakt_list: https://trakt.tv/users/tc_211/lists/halloween-2021
+  Halloween 2020:
+    sync_mode: sync
+    file_poster: config/assets/Playlists/Halloween2020.jpeg
+    libraries: Movies
+    trakt_list: https://trakt.tv/users/tc_211/lists/halloween-2020
