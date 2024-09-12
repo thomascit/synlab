@@ -4,14 +4,12 @@
 - Other related scripts
 <br>
 <br>
-<br>
 
 ### To install Gluetun kernel module (Only if used)
 ```
 sudo insmod /lib/modules/tun.ko
 ```
 Needed on reboot (Set via Task Scheduler).
-<br>
 <br>
 <br>
 
@@ -25,14 +23,12 @@ echo $data > $file
 ```
 <br>
 <br>
-<br>
 
 ### Create docker network (needed for some templates):
 
 ```
 docker network create my-default
 ```
-<br>
 <br>
 <br>
 
@@ -55,7 +51,6 @@ HTTP Body:
 ```
 <br>
 <br>
-<br>
 
 ### Schedule
 
@@ -70,14 +65,12 @@ HTTP Body:
 
 <br>
 <br>
-<br>
 
 ### Work-in-Progress
 [monitoring]
 - prometheus
 - grafana
 - snmp-exporter
-<br>
 
 [scripts]
 - fix-editions
