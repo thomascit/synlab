@@ -6,10 +6,10 @@
 <br>
 
 ### To install Gluetun kernel module (Only if used)
+Needed on reboot (Set via Task Scheduler)
 ```
 sudo insmod /lib/modules/tun.ko
 ```
-Needed on reboot (Set via Task Scheduler).
 <br>
 <br>
 
