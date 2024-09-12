@@ -1,3 +1,4 @@
+---
 services:
   metube:
     container_name: metube
@@ -12,3 +13,4 @@ services:
       - 8081:8081
     network_mode: bridge
     restart: unless-stopped
+    

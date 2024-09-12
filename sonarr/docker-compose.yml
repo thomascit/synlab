@@ -20,3 +20,4 @@ services:
     networks: 
       - my_default
     restart: unless-stopped
+    

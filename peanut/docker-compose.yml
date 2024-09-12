@@ -1,3 +1,4 @@
+---
 services:
   peanut:
     container_name: peanut
@@ -10,5 +11,6 @@ services:
       - WEB_PORT=8800
       - USERNAME=${USERNAME}
       - PASSWORD=${PASSWORD}
-    network_mode: host
+    network_mode: host # Needed to allow use NAS IP in Hardware & Power > UPS > Permitted Diskstation Devices
     restart: unless-stopped
+    
