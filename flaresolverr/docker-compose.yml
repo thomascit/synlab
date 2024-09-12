@@ -1,0 +1,20 @@
+---
+networks:
+  my_default:
+    external: true
+
+services:
+  flaresolverr:
+    container_name: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - LOG_LEVEL=debug
+    ports:
+      - 8191:8191
+    networks: 
+      - my_default
+    restart: unless-stopped
+    
