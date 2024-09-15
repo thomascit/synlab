@@ -8,9 +8,8 @@ services:
       - GID=${PGID}
       - UMASK=002
     volumes:
-      - ${DATA}/downloads/other:/downloads
+      - ${DATA}/downloads/metube:/downloads
     ports:
       - 8081:8081
     network_mode: bridge
     restart: unless-stopped
-    
