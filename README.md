@@ -5,6 +5,12 @@
 <br>
 <br>
 
+### Allow Plex transcoding
+Needed on reboot (Set via Task Scheduler)
+```
+chmod 666 /dev/dri/*
+```
+
 ### To install Gluetun kernel module (Only if used)
 Needed on reboot (Set via Task Scheduler)
 ```
@@ -27,7 +33,7 @@ echo $data > $file
 ### Create docker network (needed for some templates):
 
 ```
-docker network create my-default
+docker network create my_default
 ```
 <br>
 <br>
