@@ -1,0 +1,28 @@
+---
+services:
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - VPN_SERVICE_PROVIDER=${PROVIDER}
+      - OPENVPN_USER=${USERNAME}
+      - OPENVPN_PASSWORD=${PASSWORD}
+      - TZ=${TZ}
+      - SERVER_COUNTRIES=${SERVERCOUNTRIES}
+      - SERVER_CITIES=${SERVERCITIES}
+      - PUBLICIP_API_TOKEN=${PUBLICIP_API_TOKEN}
+      - UPDATER_PERIOD=24h
+    volumes:
+      - ${APPDATA}/gluetun:/gluetun
+    ports:
+      - 8888:8888
+      - 8388:8388
+      - 8388:8388/udp
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    restart: unless-stopped
+    

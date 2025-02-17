@@ -1,0 +1,45 @@
+--- 
+services:
+  gluetun:
+    container_name: gluetun
+    image: qmcgaw/gluetun
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - VPN_SERVICE_PROVIDER=${VPN_PROVIDER}
+      - OPENVPN_USER=${VPN_USERNAME}
+      - OPENVPN_PASSWORD=${VPN_PASSWORD}
+      - TZ=${TZ}
+      - SERVER_COUNTRIES=${VPN_SERVERCOUNTRIES}
+      - SERVER_CITIES=${VPN_SERVERCITIES}
+      - PUBLICIP_API_TOKEN=${PUBLICIP_API_TOKEN}
+      - UPDATER_PERIOD=24h
+    volumes:
+      - ${APPDATA}/gluetun:/gluetun
+    ports:
+      - 8888:8888
+      - 8388:8388
+      - 8388:8388/udp
+      - 8080:8080 # qbitorrent port
+      - ${TORRENT_PORT}:${TORRENT_PORT} # qbitorrent torrent port
+      - ${TORRENT_PORT}:${TORRENT_PORT}/udp # qbitorrent torrent port udp
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    restart: unless-stopped
+  qbittorrent:
+    container_name: qbittorrent
+    image: lscr.io/linuxserver/qbittorrent
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - UMASK=022
+      - TZ=${TZ}
+      - WEBUI_PORT=8080
+      - TORRENTING_PORT=${TORRENT_PORT}
+    volumes:
+      - ${APPDATA}/qbittorrent:/config
+      - ${DATA}/downloads:/downloads
+    network_mode: service:gluetun
+    restart: unless-stopped

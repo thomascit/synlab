@@ -1,0 +1,16 @@
+---
+services:
+  glances:
+    privileged: true 
+    image: nicolargo/glances:latest
+    container_name: glances
+    pid: host
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/os-release:/etc/os-release:ro
+    environment:
+        - "GLANCES_OPT=-w"
+    ports:
+      - 61208:61208
+    network_mode: bridge
+    restart: unless-stopped

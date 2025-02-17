@@ -4,19 +4,16 @@ networks:
     external: true
 
 services:
-  sonarr:
-    container_name: sonarr
-    image: ghcr.io/hotio/sonarr
+  flaresolverr:
+    container_name: flaresolverr
+    image: ghcr.io/flaresolverr/flaresolverr
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - UMASK=002
-    volumes:
-      - ${APPDATA}/sonarr:/config
-      - ${DATA}:/data    
+      - LOG_LEVEL=debug
     ports:
-      - 8989:8989
+      - 8191:8191
     networks: 
       - my_default
     restart: unless-stopped
